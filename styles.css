@@ -1,0 +1,75 @@
+html{
+    background-color: white;
+  }
+  
+  h1, h2 {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+  }
+  
+  h1 {
+    font-weight: bold;
+    color: white;
+    background-color: seagreen;
+    margin-bottom: 0px;
+  }
+  
+  nav, .link {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-align: center;
+    color: seagreen;
+  }
+  
+  a:hover {
+    color: goldenrod;
+    font-style: italic;
+  }
+  
+  h2 {
+    color: seagreen;
+    margin-top: 50px;
+    margin-bottom: 5px;
+  }
+  
+  table {
+    width: 500px;
+    margin: 0px auto 25px;
+    border: 1px solid black;
+    background-color: cornsilk;
+  }
+  
+  td {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border: 1px solid goldenrod;
+    padding: 3px;
+    background-color: cornsilk;
+  }
+  
+  th {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: darkseagreen;
+  }
+  
+  .code {
+    color: saddlebrown;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 12px;
+    background-color: wheat;
+  }
+  
+  .codecol {
+    text-align: center;
+    width: 80px;
+  }
+  
+  footer, footer a {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    color: black;
+    margin-top: 50px;
+  }
