@@ -12,32 +12,53 @@
         <script src="https://kit.fontawesome.com/d13e4cb6a8.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <div id="overlay"></div>
         <div id="wrapper">
             <div id="site-container">
                 <header>
                     <nav>
-                        <ul>
-                            <li><img class="logo" src="./resources/images/KCLogo.png"></li>
-                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png"><p>Home</p></div></a></li>
-                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png"><p>About</p></div></a></li>
-                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png"><p>Resume</p></div></a></li>
-                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png"><p>Projects</p></div></a></li>
-                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png"><p>Contact</p></div></a></li>
+                        <ul role="presentation">
+                            <li><img class="logo" alt="" src="./resources/images/KCLogo.png"></li>
+                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png" alt="Home"><p aria-hidden="true">Home</p></div></a></li>
+                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png" alt="About"><p aria-hidden="true">About</p></div></a></li>
+                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png" alt="Resumé"><p aria-hidden="true">Resume</p></div></a></li>
+                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png" alt="Projects"><p aria-hidden="true">Projects</p></div></a></li>
+                            <li><a href="#"><div class="folder"><img src="./resources/images/folderclosed.png" alt="Contact"><p aria-hidden="true">Contact</p></div></a></li>
+                            <li><div class="settings button" tabindex="0"><i class="fa-solid fa-gear fa-xs"></i><p>Settings</p></div></li>
                         </ul>
                         <i class="fa-solid fa-bars fa-2xl"></i>
                     </nav>
                 </header>
                 <main>
+                    <div class="pop-up window settings" inert>
+                        <div class="pop-up bar settings">
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <h2>settings<span aria-hidden="true">.txt</span></h2>
+                            <button class="settings exit" aria-label="exit"><i class="settings fa-regular fa-rectangle-xmark fa-lg"></i></button>
+                        </div>
+                        <div class="settings pop-up window-content">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="table-text"><i class="fa-solid fa-moon"></i><p>Night Mode:</p><td>
+                                        <td class="table-toggle"><label class="night-mode toggle"><input type="checkbox" aria-label="night mode"><span class="slider round"></span></label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                     <h1 class="sticky welcome">Welcome to my portfolio!</h1>
                     <div class="window profile">
                         <div class="bar">
                             <i class="fa-solid fa-circle fa-2xs"></i>
                             <i class="fa-solid fa-circle fa-2xs"></i>
                             <i class="fa-solid fa-circle fa-2xs"></i>
-                            <h2>profile.png</h2>
+                            <h2 aria-hidden="true">profile<span aria-hidden="true">.png</span></h2>
                         </div>
                         <div class="profile window-content">
-                            <img src="./Home/resources/images/profilebluesq.png">
+                            <img alt="Profile picture" src="./Home/resources/images/profilebluesq.png">
                         </div>
                     </div>
                     <h1 class="sticky heart"><i class="fa-solid fa-heart fa-2xl"></i></h1>
@@ -46,7 +67,7 @@
                             <i class="fa-solid fa-circle fa-2xs"></i>
                             <i class="fa-solid fa-circle fa-2xs"></i>
                             <i class="fa-solid fa-circle fa-2xs"></i>
-                            <h2>about_me.txt</h2>
+                            <h2 aria-label="About me">about_me<span aria-hidden="true">.txt</span></h2>
                         </div>
                         <div class="about window-content">
                             <p>Hey, I'm Kisara! I'm an artist and aspiring full-stack developer.</p>
@@ -57,26 +78,26 @@
                             <i class="fa-solid fa-circle fa-2xs"></i>
                             <i class="fa-solid fa-circle fa-2xs"></i>
                             <i class="fa-solid fa-circle fa-2xs"></i>
-                            <h2>my_projects.pdf</h2>
+                            <h2 aria-label="My projects">my_projects<span aria-hidden="true">.pdf</span></h2>
                         </div>
                         <div class="projects window-content">
                             
                         </div>
                     </div>
-                    <div class="window projects back">
+                    <div class="window projects back" aria-hidden="true">
                         <div class="bar">
                             <i class="fa-solid fa-circle fa-2xs"></i>
                             <i class="fa-solid fa-circle fa-2xs"></i>
                             <i class="fa-solid fa-circle fa-2xs"></i>
-                            <h2>my_projects.pdf</h2>
+                            <h2>my_projects<span aria-hidden="true">.pdf</span></h2>
                         </div>
                     </div>
                 </main>
             </div>
             <footer>
-                <ul>
-                    <li><a href="mailto:kisarabcloutier@gmail.com"><i class="fa-solid fa-envelope fa-lg"></i></a></li>
-                    <li><a href="#"><i class="fa-regular fa-copyright fa-lg"></i></a></li>
+                <ul role="presentation">
+                    <li><a href="mailto:kisarabcloutier@gmail.com" aria-label="Email me"><i class="fa-solid fa-envelope fa-lg"></i></a></li>
+                    <li><a href="#" aria-label="Copyright information"><i class="fa-regular fa-copyright fa-lg"></i></a></li>
                 </ul>
             </footer>
         </div>
