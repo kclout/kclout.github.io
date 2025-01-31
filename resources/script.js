@@ -1,15 +1,14 @@
 // misc elements //
 
 const miscElem = {
-   heartSticky: document.querySelector('.heart.sticky'),
    overlay: document.querySelector('#overlay'),
 };
 
 // media queries //
 
 const query = {
-   mobile: window.matchMedia('only screen and (max-width: 800px) and (orientation: portrait), only screen and (max-width: 768px) and (orientation: landscape)'),
-   desktop: window.matchMedia('only screen and (min-width: 801px)'),
+   mobile: window.matchMedia('only screen and (max-width: 715px), only screen and (max-device-width: 500px)'),
+   desktop: window.matchMedia('only screen and (min-width: 716px), only screen and (max-device-width: 1200px)'),
 };
 
 // nav elements //
@@ -96,7 +95,7 @@ let navModule = () => {
       
             if(!queryCheck()) {
                folder.querySelector('nav p').style.fontSize = '1.3rem';
-               folder.querySelector('nav img').style.width = '7.5rem';
+               folder.querySelector('nav img').style.width = '5.5rem';
             }
          });
 
@@ -122,17 +121,16 @@ let navModule = () => {
 
    // open/close mobile nav //
    let mobileNav = () => {
-      navElem.bars.addEventListener('mouseover', () => {
+
+      let openNav = () => {
          showList();   
          navElem.nav.style.height = '22rem';
          navElem.nav.style.transition = '0.5s';
          navElem.bars.style.color = 'rgb(255, 255, 255)';
          navElem.bars.style.transition = '0.1s';
-         miscElem.heartSticky.style.top = '38%';
-         miscElem.heartSticky.style.transition = '0.5s';
-      });
-
-      navElem.nav.addEventListener('mouseleave', () => {
+      }
+      
+      let closeNav = () => {
          navElem.nav.style.height = '';
          navElem.nav.style.transition = '0.5s';
          
@@ -144,9 +142,19 @@ let navModule = () => {
          }
 
          navElem.bars.style.transition = '0.1s';
-         miscElem.heartSticky.style.top = '';
-         miscElem.heartSticky.style.transition = '0.5s';
+      }
+
+      navElem.bars.addEventListener('click', () => {
+         if(navElem.nav.style.height != '') {
+            closeNav();
+         }
+         else {
+            openNav();
+         }
       });
+      
+      navElem.bars.addEventListener('mouseover', openNav);
+      navElem.nav.addEventListener('mouseleave', closeNav);
    }
 
    return {
@@ -188,6 +196,21 @@ let settingsModule = () => {
          }  
          settingsElem.settingsButton.querySelector('p').style.transition = '0.1s';
          settingsElem.settingsButton.querySelector('.fa-gear').style.transition = '0.1s';
+      });
+
+      settingsElem.settingsButton.addEventListener('click', () => {
+         if(queryCheck()) {
+            navElem.nav.style.height = '';
+            navElem.bars.style.color = '';
+            if(!settingsElem.nightElem.nightToggle.checked) {
+               settingsElem.settingsButton.querySelector('p').style.color = 'rgb(255, 255, 255)';
+               settingsElem.settingsButton.querySelector('.fa-gear').style.color = 'rgb(255, 255, 255)';
+            }
+            else {
+               settingsElem.settingsButton.querySelector('p').style.color = 'rgb(176, 197, 172)';
+               settingsElem.settingsButton.querySelector('.fa-gear').style.color = 'rgb(176, 197, 172)';
+            }
+         }
       });
    }
 
@@ -346,21 +369,15 @@ let popUpModule = () => {
    let popUpOpenClose = (button, window, content, exitButton) => {
       let openPopUpWindow = () => {
          button.addEventListener('click', () => {
-            miscElem.overlay.style.display = 'block';
-   
-            if(!queryCheck()) {
-               window.style.width = '65%';
-            }
-            else {
-               window.style.width = '90%';
-            }
-   
+            miscElem.overlay.style.display = 'block';   
             window.removeAttribute('inert');
-            window.style.height = '85%';
+            window.style.width = '720px';
+            window.style.height = '40rem';
             window.style.opacity = '100%';
             window.style.transition = '0.4s';
             content.style.width = 'auto';
             content.style.height = 'auto';
+            content.style.overflow = 'auto';
          });
 
          return {
@@ -375,6 +392,7 @@ let popUpModule = () => {
                miscElem.overlay.style.display = 'none';
                content.style.width = '';
                content.style.height = '';
+               content.style.overflow = '';
                content.style.transition = '0.4s';
             }, 300);
             
@@ -409,7 +427,7 @@ let popUpModule = () => {
 
    let popUpWindowResize = (window) => {        // changes window according to queries when already open
       if(!queryCheck() && window.style.width !== '') {
-         window.style.width = '65%';
+         window.style.width = '720px';
       }
       else if(queryCheck() && settingsElem.settingsWindow.style.width !== '') {
          window.style.width = '90%';

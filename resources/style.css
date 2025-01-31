@@ -15,7 +15,7 @@ body {
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
 }
 
 /* misc */
@@ -23,7 +23,7 @@ h2 {
 #overlay {
     display: none;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     background-color: rgba(0, 0, 0, 0.75);
     width: 100%;
     height: 100%;
@@ -34,6 +34,7 @@ h2 {
     flex: 1;
     width: 100%;
     height: auto;
+    overflow-x: auto;
 }
 
 #wrapper {
@@ -41,7 +42,6 @@ h2 {
     flex-direction: column;
     flex: 1;
     min-height: 100vh;
-    position: relative;
 }
 
 /* sticky notes */
@@ -75,30 +75,22 @@ h2 {
     border-color: rgb(161, 135, 180) transparent;
   }
 
-/*
-                <div class="window">
-                    <div class="bar">
-                        <i class="fa-solid fa-circle fa-2xs" style="color: #ffffff;"></i>
-                        <i class="fa-solid fa-circle fa-2xs" style="color: #ffffff;"></i>
-                        <i class="fa-solid fa-circle fa-2xs" style="color: #ffffff;"></i>
-                        <h2>bar text</h2>
-                    </div>
-                    <div class="window-content">
-                        <p>window text</p>
-                    </div>
-                </div>
-*/
-
 .window {
-    position: absolute;
     padding: 0;
     border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
     background-color: rgb(255, 255, 255);
-    box-shadow: -0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .window-content {
     padding: 1rem;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .bar {
@@ -111,7 +103,6 @@ h2 {
 
 .bar h2 {
     font-family: Silkscreen, monospace;
-    font-size: 1.25vw;
     font-weight: normal;
     text-align: left;
     width: auto;
@@ -128,7 +119,7 @@ h2 {
 
 
 .fa-circle.fa-2xs {
-    font-size: 0.7vw;
+    font-size: 0.6rem;
 }
 
 /* tables */
@@ -136,7 +127,6 @@ h2 {
 table {
     width: 80%;
     margin: 0 auto;
-    /*border: 1px solid red;*/
 }
 
 .table-toggle {
@@ -163,8 +153,8 @@ table {
 .toggle {
     position: relative;
     display: block;
-    width: 2.75rem;
-    height: 1.5rem;
+    width: 44px;
+    height: 24px;
   }
 
 .toggle input {
@@ -189,8 +179,8 @@ table {
 .slider:before {
     position: absolute;
     content: "";
-    height: 1rem;
-    width: 1rem;
+    height: 16px;
+    width: 16px;
     left: 4px;
     bottom: 4px;
     background-color: rgb(255, 255, 255);
@@ -209,36 +199,10 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
-
-@media only screen and (max-width: 980px) {
-    .window {
-        position: static;
-    }
-
-    .bar h2 {
-        font-size: 1.25rem;
-    }
-
-    .fa-circle.fa-2xs {
-        font-size: 0.625rem;
-    }
-}
-
-@media only screen and (max-width: 800px) and (orientation: portrait), only screen and (max-width: 768px) and (orientation: landscape) {
-    #site-container {
-        flex-direction: column;
-    }
-}
-
-@media only screen and (max-width: 560px) {
-    .bar h2 {
-        font-size: 1.1rem;
-    }
-}
-
 /* nav */
 
 nav {
+    z-index: 1;
     width: 8rem;
     height: 100%;
     background-color: rgb(176, 197, 172);
@@ -249,7 +213,7 @@ nav ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     height: 100%;
     padding: 0;
@@ -258,7 +222,7 @@ nav ul {
 }
 
 nav li {
-    margin: 0.55rem;
+    margin: 1.75vh 0;
 }
 
 nav li:first-child {
@@ -266,7 +230,7 @@ nav li:first-child {
 }
 
 nav li:last-child {
-    margin-bottom: 1rem;
+    margin: 10% 0;
 }
 
 nav p {
@@ -281,11 +245,11 @@ nav a {
 }
 
 nav img {
-    width: 5.5rem;
+    width: 64px;
 }
 
 img.logo {
-    width: 3.5rem;
+    width: 56px;
     padding: 0.5rem 1rem;
 }
 
@@ -309,25 +273,172 @@ nav .fa-bars {
     color: rgb(59, 84, 59);
 }
 
-@media only screen and (max-width: 980px) {
-    nav ul {
-        justify-content: flex-start;
-    }
+/* settings */
 
-    nav li {
-        margin-bottom: 1rem;
-    }
-
+.settings.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem;
 }
 
-@media only screen and (max-width: 800px) and (orientation: portrait), only screen and (max-width: 768px) and (orientation: landscape) {
+.settings.button:hover {
+    cursor: pointer;
+}
+
+.settings.button p {
+    font-size: 0.75rem;
+    font-family: Tomorrow, sans-serif;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.fa-gear {
+    margin-right: 0.25rem;
+}
+
+/* pop up windows */
+
+.pop-up.bar {
+    z-index: 4;
+    overflow: hidden;
+    padding-right: 0;
+}
+
+.fa-rectangle-xmark {
+    color: rgb(255, 255, 255);
+}
+
+button.exit {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    padding: 1rem 0.5rem;
+    margin-left: auto;
+}
+
+button.exit:hover {
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+    border-color: rgb(255, 0, 0);
+    transition: 0.1s;
+}
+
+.pop-up.window {
+    position: fixed;
+    z-index: 4;
+    left: 25%;
+    right: 25%;
+    top: 5%;
+    width: 0;
+    max-width: 50%;
+    height: 0;
+    max-height: 85%;
+    margin: auto;
+    opacity: 0%;
+}
+
+.pop-up.window-content {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+}
+
+/* main */
+
+main {
+    display: flex;
+    margin: auto 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 1rem 3%;
+}
+
+.mini-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    z-index: 2;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    margin-top: auto;
+    background-color: rgb(91, 121, 84);
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+}
+
+footer li {
+    margin: 0 1rem;
+}
+
+footer .fa-lg {
+    color: rgb(176, 197, 172);
+}
+
+footer .fa-lg:hover {
+    color: rgb(255, 255, 255);
+    transition: 0.1s;
+}
+
+footer a:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 980px), only screen and (max-device-width: 1200px) {
+    #site-container {
+        overflow-y: hidden;
+    }
+
+    main {
+        flex-direction: column;
+        margin: 0 3rem;
+    }
+
+    .container {
+        margin: 1rem 3% 2rem;
+    }
+}
+
+@media only screen and (max-width: 715px), only screen and (max-device-width: 500px) {
+    h2 {
+        font-size: clamp(1.15rem, 3vw, 1.25rem);
+    }
+    
+    #site-container {
+        flex-direction: column;
+    }
+
     nav {
         display: flex;
         justify-content: space-between;
         width: 100%;
         height: 3.5rem;
-        overflow: hidden;
         border-right: 0;
+        overflow: hidden;
     }
 
     nav ul {
@@ -367,162 +478,22 @@ nav .fa-bars {
     nav .fa-bars {
         display: block;
     }
-}
 
-/* settings */
-
-.settings.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 1rem;
-}
-
-.settings.button:hover {
-    cursor: pointer;
-}
-
-.settings.button p {
-    font-size: 0.75rem;
-    font-family: Tomorrow, sans-serif;
-    color: rgb(0, 0, 0);
-    text-transform: capitalize;
-    margin: 0;
-}
-
-.fa-gear {
-    margin-right: 0.25rem;
-}
-
-/* pop up windows */
-
-.pop-up.bar {
-    z-index: 3;
-    overflow: hidden;
-    padding-right: 0;
-}
-
-.fa-rectangle-xmark {
-    color: rgb(255, 255, 255);
-}
-
-button.exit {
-    background-color: rgb(0, 0, 0);
-    border: 1px solid rgb(0, 0, 0);
-    padding: 1rem 0.5rem;
-    margin-left: auto;
-}
-
-button.exit:hover {
-    cursor: pointer;
-    background-color: rgb(255, 0, 0);
-    border-color: rgb(255, 0, 0);
-    transition: 0.1s;
-}
-
-.pop-up.window {
-    position: fixed;
-    z-index: 3;
-    grid-row: 1;
-    grid-column: 3;
-    width: 0;
-    height: 0;
-    margin-top: 2rem;
-    opacity: 0%;
-}
-
-.pop-up.window-content {
-    overflow: hidden;
-    width: 0;
-    height: 0;
-}
-
-@media only screen and (max-width: 800px) and (orientation: portrait), only screen and (max-width: 768px) and (orientation: landscape) {
     .pop-up.window {
-        margin: 1% 5%;
+        max-width: 75%;
+        left: 15%;
+        right: 15%;
     }
-}
 
-
-/* main */
-
-main {
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(16, 6.25%);
-    grid-template-rows: repeat(8, 12.5%);
-    width: 100%;
-    height: auto;
-    margin-left: 0;
-}
-
-@media only screen and (max-width: 980px) {
     main {
-        display: flex;
-        flex-direction: column;
-        position: static;
-        margin: 0 3rem;
+        margin: 0 3%;
     }
-}
 
-@media only screen and (max-width: 800px) and (orientation: portrait), only screen and (max-width: 768px) and (orientation: landscape) {
-    main {
-        margin: 0;
-    }
-}
-
-/* footer */
-
-footer {
-    display: flex;
-    z-index: 1;
-    position: relative;
-    justify-content: flex-end;
-    align-items: center;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2.5rem;
-    margin-top: auto;
-    background-color: rgb(91, 121, 84);
-}
-
-footer ul {
-    display: flex;
-    list-style-type: none;
-}
-
-footer li {
-    margin: 0 1rem;
-}
-
-footer .fa-lg {
-    color: rgb(176, 197, 172);
-}
-
-footer .fa-lg:hover {
-    color: rgb(255, 255, 255);
-    transition: 0.1s;
-}
-
-footer a:hover {
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 800px) and (orientation: portrait), only screen and (max-width: 768px) and (orientation: landscape) {
     footer {
         justify-content: center;
     }
+
+    footer ul {
+        padding: 0;
+    }
 }
-
-
-/*
-<div class="night-toggle main">
-    <i class="fa-solid fa-moon"></i>
-    <p>Night Mode</p>
-    <label class="toggle">
-        <input type="checkbox">
-        <span class="slider round"></span>
-    </label>
-</div>
-*/

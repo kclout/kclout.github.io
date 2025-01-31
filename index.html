@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Silkscreen:wght@400;700&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/d13e4cb6a8.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>
         <div id="overlay"></div>
@@ -49,48 +50,47 @@
                             </table>
                         </div>
                     </div>
-                    <h1 class="sticky welcome">Welcome to my portfolio!</h1>
-                    <div class="window profile">
-                        <div class="bar">
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <h2 aria-hidden="true">profile<span aria-hidden="true">.png</span></h2>
-                        </div>
-                        <div class="profile window-content">
-                            <img alt="Profile picture" src="./Home/resources/images/profilebluesq.png">
-                        </div>
-                    </div>
-                    <h1 class="sticky heart"><i class="fa-solid fa-heart fa-2xl"></i></h1>
-                    <div class="window about">
-                        <div class="bar">
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <h2 aria-label="About me">about_me<span aria-hidden="true">.txt</span></h2>
-                        </div>
-                        <div class="about window-content">
-                            <p>Hey, I'm Kisara! I'm an artist and aspiring full-stack developer.</p>
+                    <div class="container a">
+                        <h1 class="sticky welcome">Welcome to my portfolio!</h1>
+                        <div class="window profile">
+                            <div class="bar">
+                                <i class="fa-solid fa-circle fa-2xs"></i>
+                                <i class="fa-solid fa-circle fa-2xs"></i>
+                                <i class="fa-solid fa-circle fa-2xs"></i>
+                            </div>
+                            <div class="profile window-content">
+                                <img class="photo" alt="Profile picture" src="./Home/resources/images/profilebluesq.png">
+                            </div>
                         </div>
                     </div>
-                    <div class="window projects">
-                        <div class="bar">
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <h2 aria-label="My projects">my_projects<span aria-hidden="true">.pdf</span></h2>
+                    <div class="container b">
+                        <div class="window projects">
+                            <div class="bar">
+                                <i class="fa-solid fa-circle fa-2xs"></i>
+                                <i class="fa-solid fa-circle fa-2xs"></i>
+                                <i class="fa-solid fa-circle fa-2xs"></i>
+                                <h2 aria-label="My projects">my_projects<span aria-hidden="true">.pdf</span></h2>
+                            </div>
+                            <div class="projects window-content">
+                                <img src="./resources/images/placeholder.jpg">
+                                <h3>Placeholder Title</h3>
+                                <p>Placeholder description.</p>
+                            </div>
                         </div>
-                        <div class="projects window-content">
-                            
+                        <div class="window about">
+                            <div class="bar">
+                                <i class="fa-solid fa-circle fa-2xs"></i>
+                                <i class="fa-solid fa-circle fa-2xs"></i>
+                                <i class="fa-solid fa-circle fa-2xs"></i>
+                                <h2 aria-label="About me">about_me<span aria-hidden="true">.txt</span></h2>
+                            </div>
+                            <div class="about window-content">
+                                <p>Hey, I'm Kisara! I'm an artist and aspiring full-stack developer.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="window projects back" aria-hidden="true">
-                        <div class="bar">
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <i class="fa-solid fa-circle fa-2xs"></i>
-                            <h2>my_projects<span aria-hidden="true">.pdf</span></h2>
-                        </div>
+                    <div class="container c">
+                        <h1 class="sticky heart"><i class="fa-solid fa-heart fa-2xl"></i></h1>
                     </div>
                 </main>
             </div>
