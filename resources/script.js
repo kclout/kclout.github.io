@@ -9,6 +9,7 @@ const miscElem = {
 const query = {
    mobile: window.matchMedia('only screen and (max-width: 715px), only screen and (max-device-width: 500px)'),
    desktop: window.matchMedia('only screen and (min-width: 716px), only screen and (max-device-width: 1200px)'),
+   desktopSmall: window.matchMedia('only screen and (max-width: 980px), only screen and (max-device-width: 1200px)'),
 };
 
 // nav elements //
@@ -56,11 +57,14 @@ const popUpElem = {
 
 let queryCheck = () => {
    if(query.mobile.matches) {
-      return true;
-   }
-   else {
-      return false;
-   }
+      return 1;
+  }
+  else if(query.desktopSmall.matches) {
+      return 2;
+  }
+  else {
+      return 0;
+  }
 }
 
 // nav //
@@ -90,10 +94,10 @@ let navModule = () => {
          folder.addEventListener('mouseover', () => {
             folder.querySelector('nav p').style.color = 'rgb(255, 255, 255)';
             folder.querySelector('nav p').style.transition = '0.1s';
-            folder.querySelector('nav img').src = './resources/images/folderopen.png';
+            folder.querySelector('nav img').src = '/resources/images/folderopen.png';
             folder.querySelector('nav img').style.transition = '0.1s';
       
-            if(!queryCheck()) {
+            if(queryCheck() !== 1) {
                folder.querySelector('nav p').style.fontSize = '1.3rem';
                folder.querySelector('nav img').style.width = '5.5rem';
             }
@@ -108,10 +112,10 @@ let navModule = () => {
             }
              
             folder.querySelector('nav p').style.transition = '0.1s';
-            folder.querySelector('nav img').src = './resources/images/folderclosed.png';
+            folder.querySelector('nav img').src = '/resources/images/folderclosed.png';
             folder.querySelector('nav img').style.transition = '0.1s';
       
-            if(!queryCheck()) {
+            if(queryCheck() !== 1) {
                folder.querySelector('nav p').style.fontSize = '';
                folder.querySelector('nav img').style.width = '';
             }
@@ -145,7 +149,7 @@ let navModule = () => {
       }
 
       navElem.bars.addEventListener('click', () => {
-         if(navElem.nav.style.height != '') {
+         if(navElem.nav.style.height !== '') {
             closeNav();
          }
          else {
@@ -199,7 +203,7 @@ let settingsModule = () => {
       });
 
       settingsElem.settingsButton.addEventListener('click', () => {
-         if(queryCheck()) {
+         if(queryCheck() === 1) {
             navElem.nav.style.height = '';
             navElem.bars.style.color = '';
             if(!settingsElem.nightElem.nightToggle.checked) {
@@ -426,10 +430,10 @@ let popUpModule = () => {
    }
 
    let popUpWindowResize = (window) => {        // changes window according to queries when already open
-      if(!queryCheck() && window.style.width !== '') {
+      if(queryCheck() !== 1 && window.style.width !== '') {
          window.style.width = '720px';
       }
-      else if(queryCheck() && settingsElem.settingsWindow.style.width !== '') {
+      else if(queryCheck() === 1 && settingsElem.settingsWindow.style.width !== '') {
          window.style.width = '90%';
       }
    }
@@ -447,7 +451,7 @@ let popUps = popUpModule();
 let queryChange = () => {
    queryCheck();
 
-   if(queryCheck()) {
+   if(queryCheck() === 1) {
       navigation.hideList();          // hide list before user hovers in mobile mode
       navigation.mobileNav();
    }

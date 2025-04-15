@@ -61,19 +61,82 @@
 }
 
 .projects img {
-    width: 90%;
-    height: 350px;
+    width: 95%;
+    height: 330px;
     object-fit: cover;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(161, 135, 180);
 }
 
-.projects h3 {
-    margin-bottom: 0;
+.media-player.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1rem;
+    background-color: rgb(223, 202, 239);
+    border-top: 0.25px solid rgb(161, 135, 180);
 }
 
-.projects p {
-    align-self: flex-start;
-    margin-left: 5%;
+.media-player.controls {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.media-player.controls:before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    padding: 0 35%;
+    border-width: 7px 125px 0 0;
+    border-style: solid;
+    border-color: rgb(161, 135, 180);
+}
+
+.media-player.controls:after {
+    content: "";
+    position: absolute;
+    top: -1.4rem;
+    left: 20%;
+    border-width: 20px 8px 0 0;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 0 1px rgb(161, 135, 180);
+}
+
+.media-player.controls i {
+    color: rgb(99, 77, 117);
+    padding: 0.25rem 0.5rem;
+    margin: 0 0.5rem 0;
+    border: 2px solid rgb(161, 135, 180);
+    border-radius: 3px;
+}
+
+.media-player.content h3 {
+    margin: 0 auto;
+}
+
+.media-player.content a {
+    color: rgb(99, 77, 117);
+}
+
+.media-player.content a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.media-player.controls i:hover {
+    cursor: pointer;
+    color: rgb(161, 135, 180);
+    background-color: rgb(255, 255, 255);
+}
+
+.media-player.controls i:active {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(161, 135, 180);
 }
 
 /* about me window */
@@ -86,6 +149,7 @@
 .about.window-content{
     display: flex;
     align-items: center;
+    padding: 1rem 2rem;
 }
 
 .about p {
@@ -190,5 +254,17 @@
     
     .fa-heart.fa-2xl {
         font-size: 3rem;
+    }
+}
+
+@media only screen and (max-device-width: 500px) {
+    .media-player.controls:before {
+        padding: 0 25%;
+        border-width: 5px 125px 0 0;
+    }
+
+    .media-player.controls:after {
+        top: -1.3rem;
+        border-width: 12px 5px 0 0;
     }
 }
