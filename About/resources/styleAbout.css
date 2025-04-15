@@ -1,0 +1,279 @@
+main {
+    flex-direction: column;
+}
+
+/* containers */
+
+.container.a {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.container.b {
+    justify-content: flex-start;
+    margin: 0 3% 1rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* about me title */
+
+.sticky.title {
+    font-family: Silkscreen, monospace;
+    font-size: clamp(1.75rem, 2.25vw, 2rem);
+    font-weight: normal;
+    color: rgb(6, 61, 96);
+    width: 50%;
+    height: 30vh;
+    max-height: 220px;
+    min-height: 171px;
+    margin-left: clamp(2rem, 4vw, 3rem);
+    background-color: rgb(185, 215, 234);
+}
+
+.sticky.title:before {
+    border-color: rgb(185, 215, 234);
+}
+
+.sticky.title:after {
+    border-color: rgb(132, 183, 214) transparent;
+}
+
+/* about me photo window */
+.pic.window {
+    width: 100%;
+    max-width: 800px;
+    min-width: 500px;
+}
+
+.mini-container.a {
+    padding-bottom: 1rem;
+    overflow: hidden;
+}
+
+.mini-container.a img {
+    width: 75%;
+    margin: 0;
+    object-fit: cover;
+    border: 2px solid rgb(161, 135, 180);
+}
+
+.toolbar-content {
+    position: relative;
+    display: flex;
+    align-self: flex-start;
+    padding: 1px;
+    margin: 0 1rem 0 0;
+    background-color: rgb(161, 135, 180);
+}
+
+.toolbar-content:after {
+    content: "";
+    position: absolute;
+    left: 0.1rem;
+    right: 2rem;
+    bottom: clamp(-8rem, -10vw, -7.5rem);
+    border-width: clamp(6rem, 8vw, 6.5rem) clamp(6rem, 9vw, 6.5rem) 0 0;
+    border-style: solid;
+    border-color: rgb(222, 234, 220);
+    box-shadow: 0.1rem 0.1rem rgb(176, 197, 172), -0.1rem 0.1rem rgb(176, 197, 172), -0.1rem -0.1rem rgb(176, 197, 172), 0.1rem -0.1rem rgb(176, 197, 172);
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar i{
+    color: rgb(99, 77, 117);
+    padding: clamp(1.15rem, 2vw, 1.25rem) clamp(0.65rem, 1vw, 0.75rem);
+    margin: 1px;
+    background-color: rgb(255, 255, 255);
+}
+
+.palette-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    width: 30vw;
+    max-width: 415px;
+    min-width: 350px;
+    height: 70px;
+    background: repeating-linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255) 5px, transparent 1px, transparent 35px), repeating-linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255) 5px, transparent 1px, transparent 35px),  linear-gradient(to right, rgb(176, 197, 172), rgb(185, 215, 234), rgb(223, 202, 239));
+}
+
+.palette-content:before {
+    content: "";
+    position: absolute;
+    left: -5rem;
+    bottom: clamp(0.5rem, 1vw, 1rem);
+    width: clamp(2rem, 3.2vw, 2.5rem);
+    border-width: clamp(2rem, 3.2vw, 2.5rem) 0 0 0;
+    border-style: solid;
+    border-color: rgb(185, 215, 234);
+    box-shadow: 1px 1px rgb(132, 183, 214, 0.5);
+}
+
+.palette-content:after {
+    content: "";
+    position: absolute;
+    left: -6rem;
+    bottom: clamp(1.5rem, 2vw, 2rem);
+    width: clamp(2rem, 3.2vw, 2.5rem);
+    border-width: clamp(2rem, 3.2vw, 2.5rem) 0 0 0;
+    border-style: solid;
+    border-color: rgb(223, 202, 239);
+    box-shadow: 1px 1px rgb(161, 135, 180, 0.5);
+}
+
+.about.window {
+    width: 100%;
+}
+
+.about.window-content {
+    padding: 1rem 2rem;
+}
+
+.about.window-content p {
+    text-indent: 45px;
+}
+
+@media only screen and (max-width: 980px), only screen and (max-device-width: 1200px) {
+
+    .container.b, .container.a {
+        width: 90%;
+        max-width: clamp(500px, 70vw, 1000px);
+        margin: 0 3% 2rem;
+    }
+
+    .container.a {
+        margin-top: 2rem;
+    }
+
+    .mini-container.a {
+        align-items: flex-start;
+        min-height: 140px;
+        padding-bottom: 0.5rem;
+    }
+
+    .sticky.title {
+        font-size: clamp(1.5rem, 3.5vw, 2.20rem);
+        margin-left: clamp(1rem, 2vw, 2rem);
+    }
+
+    .pic.window {
+        min-width: 300px;
+    }
+
+    .mini-container.a img {
+        min-height: 140px;
+        min-width: 170px;
+    }
+
+    .toolbar-content {
+        margin: 0 0.5rem 0 0;
+    }
+
+    .toolbar-content:after {
+        bottom: clamp(-4.5rem, -5.5vw, -2.5rem);
+        border-width: clamp(2rem, 4.5vw, 4rem) clamp(3rem, 6vw, 3.5rem) 0 0;
+    }
+
+    .toolbar i {
+        font-size: 0.75rem;
+        padding: clamp(0.5rem, 1.5vw, 1rem) clamp(0.1rem, 0.75vw, 0.5rem);
+    }
+
+    .palette-content {
+        width: 25vw;
+        min-width: 200px;
+        max-width: unset;
+        height: clamp(40px, 5vw, 60px);
+        background: repeating-linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255) 5px, transparent 1px, transparent clamp(20px, 2.5vw, 30px)), repeating-linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255) 5px, transparent 1px, transparent clamp(20px, 2.5vw, 30px)), linear-gradient(to right, rgb(176, 197, 172), rgb(185, 215, 234), rgb(223, 202, 239));
+    }
+
+    .palette-content:before {
+        left: clamp(-4rem, -7vw, -2rem);
+        width: clamp(1rem, 3vw, 2rem);
+        border-width: clamp(1rem, 3vw, 2rem) 0 0 0;
+    }
+
+    .palette-content:after {
+        left: clamp(-5rem, -8vw, -3rem);
+        width: clamp(1rem, 3vw, 2rem);
+        border-width: clamp(1rem, 3vw, 2rem) 0 0 0;
+        bottom: clamp(1.25rem, 1.5vw, 1.5rem);
+    }
+}
+
+@media only screen and (max-width: 715px), only screen and (max-device-width: 500px) {
+    .container.a {
+        flex-direction: column;
+        margin: 4rem 3% 2rem;
+
+    }
+
+    .sticky.title {
+        font-size: clamp(1.5rem, 5vw, 2.20rem);
+        width: 90%;
+        height: 20vw;
+    }
+
+    .pic.window {
+        margin-top: 4rem;
+    }
+
+    .toolbar-content {
+        margin: 0 1rem 0 0;
+    }
+
+    .toolbar-content:after {
+        bottom: -5rem;
+        border-width: clamp(3.75rem, 10vw, 4rem) clamp(5.5rem, 14vw, 6rem) 0 0
+    }
+
+    .toolbar i{
+        font-size: 1.5em;
+        padding: clamp(1rem, 3vw, 1.25rem) clamp(0.5rem, 1.5vw, 0.75rem);
+    }
+
+    .palette-content {
+        width: 55vw;
+        max-width: 350px;
+        min-width: 270px;
+        height: 70px;
+        background: repeating-linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255) 5px, transparent 1px, transparent 35px), repeating-linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255) 5px, transparent 1px, transparent 35px),  linear-gradient(to right, rgb(176, 197, 172), rgb(185, 215, 234), rgb(223, 202, 239));
+    }
+    
+    .palette-content:before {
+        left: -4.5rem;
+        width: clamp(2rem, 3.2vw, 2.5rem);
+        border-width: clamp(2rem, 3.2vw, 2.5rem) 0 0 0;
+    }
+    
+    .palette-content:after {
+        left: -5.5rem;
+        bottom: clamp(1.5rem, 2vw, 2rem);
+        width: clamp(2rem, 3.2vw, 2.5rem);
+        border-width: clamp(2rem, 3.2vw, 2.5rem) 0 0 0;
+    }    
+}
+
+@media only screen and (max-width: 475px) {
+ .toolbar-content:after, .palette-content:before, .palette-content:after {
+    display: none;
+ }
+
+ .toolbar-content {
+    align-self: center;
+ }
+
+ .palette-content {
+    max-width: unset;
+    min-width: unset;
+    width: 100%;
+ }
+}
