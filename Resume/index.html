@@ -4,7 +4,7 @@
         <title>Kisara's Portfolio</title>
         <link rel="shortcut icon" href="../resources/images/KCLogoFav.png" type="image/x-icon">
         <link rel="stylesheet" href="../resources/style.css">
-        <link rel="stylesheet" href="./resources/styleAbout.css">
+        <link rel="stylesheet" href="./resources/styleResume.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,8 @@
                         <ul role="presentation">
                             <li><img class="logo" alt="" src="../resources/images/KCLogo.png"></li>
                             <li><a href="../index.html"><div class="folder"><img src="../resources/images/folderclosed.png" alt="Home"><p aria-hidden="true">Home</p></div></a></li>
-                            <li><a href="#"><div class="folder"><img src="../resources/images/folderclosed.png" alt="About"><p aria-hidden="true">About</p></div></a></li>
-                            <li><a href="../Resume/index.html"><div class="folder"><img src="../resources/images/folderclosed.png" alt="Resumé"><p aria-hidden="true">Resume</p></div></a></li>
+                            <li><a href="../About/index.html"><div class="folder"><img src="../resources/images/folderclosed.png" alt="About"><p aria-hidden="true">About</p></div></a></li>
+                            <li><a href="#"><div class="folder"><img src="../resources/images/folderclosed.png" alt="Resumé"><p aria-hidden="true">Resume</p></div></a></li>
                             <li><a href="#"><div class="folder"><img src="../resources/images/folderclosed.png" alt="Projects"><p aria-hidden="true">Projects</p></div></a></li>
                             <li><a href="#"><div class="folder"><img src="../resources/images/folderclosed.png" alt="Contact"><p aria-hidden="true">Contact</p></div></a></li>
                             <li><div class="settings button" tabindex="0"><i class="fa-solid fa-gear fa-xs"></i><p>Settings</p></div></li>
@@ -51,50 +51,57 @@
                         </div>
                     </div>
                     <div class="container a">
-                        <h1 class="sticky title" aria-label="About Me">About<br>Me</h1>
-                        <div class="window pic">
+                        <h1 class="sticky title" aria-label="Resume">Resume</h1>
+                        <div class="window download-resume">
                             <div class="bar">
                                 <i class="fa-solid fa-circle fa-2xs"></i>
                                 <i class="fa-solid fa-circle fa-2xs"></i>
                                 <i class="fa-solid fa-circle fa-2xs"></i>
                             </div>
-                            <div class="pic window-content">
-                                <div class="mini-container a">
-                                    <div class = "toolbar-content">
-                                        <div class="toolbar a">
-                                            <i class="fa-solid fa-pencil fa-xl"></i>
-                                            <i class="fa-solid fa-eraser fa-xl"></i>
-                                            <i class="fa-solid fa-fill-drip fa-xl"></i>
-                                            <i class="fa-solid fa-paintbrush fa-xl"></i>
-                                        </div>
-                                        <div class="toolbar b">
-                                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                                            <i class="fa-solid fa-eye-dropper fa-xl"></i>
-                                            <i class="fa-solid fa-scissors fa-xl"></i>
-                                            <i class="fa-solid fa-crop fa-xl"></i>
-                                        </div>
-                                    </div>                                    
-                                    <img alt="Profile picture" src="./resources/images/aboutmepic.jpg">
-                                </div>
-                                <div class="palette-content">
-                                    <p aria-hidden="true"></p>
-                                </div>                             
+                            <div class="download-resume window-content">
+                                <h3>Download KC_RESUME.PDF?</h3>
+                                <ul>
+                                    <li><a href="./resources/kc_resume.pdf" target="_blank">Yes</a></li>
+                                    <li><a href="#">No</a></li>
+                                </ul>
                             </div>
-                        </div>  
+                        </div>                      
                     </div>
                     <div class="container b">
-                        <div class="window about">
+                        <div class="window resume">
                             <div class="bar">
                                 <i class="fa-solid fa-circle fa-2xs"></i>
                                 <i class="fa-solid fa-circle fa-2xs"></i>
                                 <i class="fa-solid fa-circle fa-2xs"></i>
-                                <h2 aria-label="About me">about_me<span aria-hidden="true">.txt</span></h2>
+                                <h2 aria-label="My resume">kc_resume<span aria-hidden="true">.doc</span></h2>
                             </div>
-                            <div class="about window-content">
-                                <p></t>Hi, I'm Kisara Cloutier. I am a self-taught artist and currently learning everything about being a full-stack developer. Aside from drawing and web design, I love playing guitar, video games, cats (obviously), and learning new things!</p>
+                            <div class="resume window-content">
+                                <ul class="resume menu-bar" role="presentation">
+                                    <li aria-hidden="true">FILE</li>
+                                    <li aria-hidden="true">EDIT</li>
+                                    <li aria-hidden="true">VIEW</li>
+                                    <li aria-hidden="true">HELP</li>
+                                </ul>
+                                <div class="resume toolbar">
+                                    <ul class="resume file-toolbar" role="presentation">
+                                        <li><i class="fa-solid fa-file fa-lg"></i></li>
+                                        <li><i class="fa-regular fa-folder-open fa-lg"></i></li>
+                                        <li><i class="fa-solid fa-floppy-disk fa-lg"></i></li>
+                                    </ul>
+                                    <ul class="resume font-style" role="presentation">
+                                        <li aria-hidden="true">Arial</li>
+                                        <li aria-hidden="true">12</li>
+                                    </ul>
+                                    <ul class="resume font-toolbar" role="presentation">
+                                        <li class="bold" aria-hidden="true">B</li>
+                                        <li class="italic" aria-hidden="true">I</li>
+                                        <li class="underline" aria-hidden="true">U</li>
+                                    </ul>
+                                </div>
+                                <iframe src="https://drive.google.com/file/d/1nXQdJPgvip7hQuneyAn_VOpA6y2YrxVx/preview"></iframe>
                             </div>
                         </div>
-                    </div>                
+                    </div>
                 </main>
             </div>
             <footer>
@@ -105,6 +112,6 @@
             </footer>
         </div>
         <script src="../resources/script.js"></script>
-        <script src="../About/resources/scriptAbout.js"></script>
+        <script src="./resources/scriptResume.js"></script>
     </body>
 </html>

@@ -27,6 +27,7 @@ const mainElem = {
    windows: document.querySelectorAll('.window'),
    barText: document.querySelectorAll('.bar h2'),
    mainText: document.querySelectorAll('.window-content p'),
+   h3Text: document.querySelectorAll('h3'),
    pageBackground: document.querySelector('html'),
 }
 
@@ -297,6 +298,11 @@ let applyNightMode = () => {
          text.style.transition = '0.4s';
       });
 
+      mainElem.h3Text.forEach((text) => {
+         text.style.color = 'rgb(176, 197, 172)';
+         text.style.transition = '0.4s';
+      });
+
       mainElem.mainText.forEach((text) => {
          text.style.color = 'rgb(176, 197, 172)';
          text.style.transition = '0.4s';
@@ -343,6 +349,10 @@ let applyNightMode = () => {
       });
 
       mainElem.barText.forEach((text) => {
+         text.style.color = '';
+      });
+
+      mainElem.h3Text.forEach((text) => {
          text.style.color = '';
       });
 

@@ -27,6 +27,7 @@ let applyNightModeHome = () => {
 
         mediaPlayerElem.mediaPlayerButtons.forEach((button) => {
             button.style.color = 'rgb(223, 202, 239)';
+            button.style.transition = '0.4s';
             button.addEventListener('mouseover', () => {
                     button.style.color = 'rgb(161, 135, 180)';        
             });

@@ -1,5 +1,6 @@
 main {
     flex-direction: column;
+    padding: 0 4rem;
 }
 
 /* containers */
@@ -42,6 +43,7 @@ main {
 }
 
 /* about me photo window */
+
 .pic.window {
     width: 100%;
     max-width: 800px;
@@ -55,6 +57,7 @@ main {
 
 .mini-container.a img {
     width: 75%;
+    height: 290px;
     margin: 0;
     object-fit: cover;
     border: 2px solid rgb(161, 135, 180);
@@ -74,7 +77,7 @@ main {
     position: absolute;
     left: 0.1rem;
     right: 2rem;
-    bottom: clamp(-8rem, -10vw, -7.5rem);
+    bottom: clamp(-7.5rem, -10vw, -7rem);
     border-width: clamp(6rem, 8vw, 6.5rem) clamp(6rem, 9vw, 6.5rem) 0 0;
     border-style: solid;
     border-color: rgb(222, 234, 220);
@@ -108,7 +111,7 @@ main {
 .palette-content:before {
     content: "";
     position: absolute;
-    left: -5rem;
+    left: -4rem;
     bottom: clamp(0.5rem, 1vw, 1rem);
     width: clamp(2rem, 3.2vw, 2.5rem);
     border-width: clamp(2rem, 3.2vw, 2.5rem) 0 0 0;
@@ -120,7 +123,7 @@ main {
 .palette-content:after {
     content: "";
     position: absolute;
-    left: -6rem;
+    left: -5rem;
     bottom: clamp(1.5rem, 2vw, 2rem);
     width: clamp(2rem, 3.2vw, 2.5rem);
     border-width: clamp(2rem, 3.2vw, 2.5rem) 0 0 0;
@@ -128,6 +131,8 @@ main {
     border-color: rgb(223, 202, 239);
     box-shadow: 1px 1px rgb(161, 135, 180, 0.5);
 }
+
+/* about me description */
 
 .about.window {
     width: 100%;
@@ -143,14 +148,35 @@ main {
 
 @media only screen and (max-width: 980px), only screen and (max-device-width: 1200px) {
 
+    main {
+        padding: unset;
+        margin: 10% 3rem;
+    }
+
+    /* ccontainers */
+
     .container.b, .container.a {
         width: 90%;
         max-width: clamp(500px, 70vw, 1000px);
+        height: auto;
         margin: 0 3% 2rem;
     }
 
     .container.a {
         margin-top: 2rem;
+    }
+
+    /* about me title */
+
+    .sticky.title {
+        font-size: clamp(1.5rem, 3.5vw, 2.20rem);
+        margin-left: clamp(1rem, 2vw, 2rem);
+    }
+
+    /* about me photo window */
+
+    .pic.window {
+        min-width: 300px;
     }
 
     .mini-container.a {
@@ -159,16 +185,8 @@ main {
         padding-bottom: 0.5rem;
     }
 
-    .sticky.title {
-        font-size: clamp(1.5rem, 3.5vw, 2.20rem);
-        margin-left: clamp(1rem, 2vw, 2rem);
-    }
-
-    .pic.window {
-        min-width: 300px;
-    }
-
     .mini-container.a img {
+        height: 20vw;
         min-height: 140px;
         min-width: 170px;
     }
@@ -210,11 +228,19 @@ main {
 }
 
 @media only screen and (max-width: 715px), only screen and (max-device-width: 500px) {
+    main {
+        margin: 0 3%;
+    }
+
+    /* containers */
+
     .container.a {
         flex-direction: column;
         margin: 4rem 3% 2rem;
 
     }
+
+    /* about me title */
 
     .sticky.title {
         font-size: clamp(1.5rem, 5vw, 2.20rem);
@@ -222,8 +248,14 @@ main {
         height: 20vw;
     }
 
+    /* about me photo window */
+
     .pic.window {
         margin-top: 4rem;
+    }
+
+    .mini-container.a img {
+        height: 45vw;
     }
 
     .toolbar-content {

@@ -1,0 +1,396 @@
+main ul {
+    list-style-type: none;
+}
+
+/* containers */
+
+.container.a {
+    width: 25vw;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+/* resume title */
+
+.sticky.title {
+    font-family: Silkscreen, monospace;
+    font-size: clamp(1.75rem, 2.25vw, 2rem);
+    font-weight: normal;
+    width: 90%;
+    height: 30vh;
+    min-height: 160px;
+    max-height: 200px;
+    margin-bottom: 4rem;
+    color: rgb(99, 77, 117);
+    background-color: rgb(223, 202, 239);
+}
+
+/* download window */
+
+.download-resume.window {
+ width: 100%;
+}
+
+.download-resume.window-content {
+    text-align: center;
+}
+
+.download-resume.window-content ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.download-resume.window-content a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 0.23rem 1rem;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    background-color: rgb(0, 0, 0);
+}
+
+.download-resume.window-content a:hover {
+    cursor: pointer;
+    color: rgb(91, 121, 84);
+    border-color: rgb(91, 121, 84);
+    background-color: rgb(255, 255, 255);
+}
+
+.download-resume.window-content a:active {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(91, 121, 84)
+}
+
+/* resume window */
+
+.resume.window {
+    width: 100%;
+}
+
+.resume.window-content {
+    padding: 0;
+}
+
+.resume.menu-bar, .resume.file-toolbar, .resume.font-style, .resume.font-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.resume.menu-bar li:last-child {
+    padding-right: 0;
+}
+
+.resume.menu-bar {
+    padding: 0.5rem 1rem;
+    background-color: rgb(185, 215, 234);
+}
+
+.resume.menu-bar li {
+    color: rgb(6, 61, 96);
+    padding-right: 5%;
+}
+
+.resume.toolbar {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.5rem clamp(1px, 0.5vw, 8px) 0;
+    background-color: rgb(185, 215, 234);
+    border-top: 1px solid rgb(86, 130, 157);
+    border-bottom: 1px solid rgb(86, 130, 157);
+}
+
+.resume.file-toolbar {
+    padding: 0 0 0.5rem 0;
+}
+
+.resume.file-toolbar li, .resume.font-toolbar li {
+    padding: 6px 7px;
+    border: 2px solid rgb(86, 130, 157);
+    border-right: 0px;
+}
+
+.resume.file-toolbar li:last-child, .resume.font-toolbar li:last-child {
+    border-right: 2px solid rgb(86, 130, 157);
+}
+
+.resume.file-toolbar i {
+    color: rgb(6, 61, 96);
+}
+
+.resume.font-style {
+    padding: 0 3%;
+}
+
+.resume.font-style li {
+    color: rgb(6, 61, 96);
+    padding: 7px clamp(30px, 5vw, 64px) 7px 0;
+    margin-right: 10%;
+    background-color: rgb(255, 255, 255);
+}
+
+.resume.font-style li:before {
+    content: "";
+    position: relative;
+    bottom: -12px;
+    left: clamp(105px, 9vw, 116px);
+    border-top: 6.5px solid rgb(86, 130, 157);
+    border-right: 6.5px solid transparent;
+    border-left: 6.5px solid transparent;
+    border-bottom: 6.5px solid transparent;
+}
+
+.resume.font-style li:after {
+    content: "";
+    position: relative;
+    left: clamp(50px, 4.5vw, 60px);
+    border-style: solid;
+    border-width: 7px 15px;
+    border-color: transparent;
+    box-shadow: -2px 0px rgb(185, 215, 234);
+}
+
+.resume.font-style li:last-child {
+    padding-right: 3vw;
+}
+
+.resume.font-style li:last-child:before {
+    left: clamp(69px, 6vw, 80px);
+}
+
+.resume.font-style li:last-child:after {
+    left: clamp(30px, 3vw, 40px);
+}
+
+.resume.font-toolbar {
+    padding: 0 0 0 5%;
+}
+
+.resume.font-toolbar li {
+    color: rgb(6, 61, 96);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.resume.window-content iframe {
+    width: 43vw;
+    min-width: 400px;
+    max-width: 688px;
+    min-height: 430px;
+    height: 35vw;
+    max-height: 460px;
+    margin: 1rem;
+}
+
+@media only screen and (max-width: 980px), only screen and (max-device-width: 1200px) {
+
+    main {
+        margin: 10%;
+    }
+
+    .container.a, .container.b {
+        width: 100%;
+        height: unset;
+        margin: 0 3% 2rem;
+    }
+
+    .container.a {
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 2rem 3%;
+        max-width: clamp(500px, 70vw, 1000px);
+    }
+
+    /* resume title */
+
+    .sticky.title {
+        font-size: clamp(1.5rem, 3.5vw, 2.20rem);
+        width: 35%;
+        max-height: 165px;
+        min-height: unset;
+        margin-right: clamp(1rem, 2vw, 2rem);
+        margin-bottom: auto;
+    }
+
+    /* download window */
+
+    .download-resume.window {
+        width: 65%;
+    }
+
+    /* resume window*/
+
+    .resume.menu-bar li {
+        font-size: 0.75rem;
+    }
+
+    .resume.toolbar {
+        padding: 0.5rem 3% 0
+    }
+
+    .resume.font-style li:before {
+        left: clamp(97px, 11vw, 100px);
+    }
+    
+    .resume.font-style li:after {
+        left: clamp(45px, 4.5vw, 60px);
+    }
+
+    .resume.font-style li:last-child:before {
+        left: clamp(64px, 8vw, 67px);
+    }
+    
+    .resume.font-style li:last-child:after {
+        left: clamp(30px, 3vw, 40px);
+    }
+
+    .resume.window-content iframe {
+        width: 60vw;
+        min-width: unset;
+        max-width: 460px;
+    }
+}
+
+@media only screen and (max-width: 715px), only screen and (max-device-width: 500px) {
+    main {
+        margin: 0 3%;
+    }
+
+    .container.a, .container.b {
+        width: clamp(400px, 70vw, 1000px);
+    }
+    
+    .container.a {
+        flex-direction: column;
+        margin: 4rem 3% 2rem;
+    }
+
+    /* resume title */
+
+    .sticky.title {
+        font-size: clamp(1.5rem, 5vw, 2.20rem);
+        width: 90%;
+        margin-bottom: 4rem;
+    }
+
+    /* download window */
+
+    .download-resume.window {
+        width: 100%;
+        height: 170px;
+    }
+
+    .download-resume.window-content ul {
+        margin: 2rem 3rem 0;
+    }
+
+
+    /* resume window */
+
+    .resume.file-toolbar li, .resume.font-toolbar li {
+        padding: 4px 6px;
+    }
+
+    .resume.file-toolbar i {
+        font-size: 1em;
+    }
+
+    .resume.font-style li {
+        padding: 7px clamp(20px, 4vw, 30px) 5px 0;
+    }
+
+    .resume.font-style li:before {
+        left: clamp(73px, 12vw, 77px);
+    }
+
+    .resume.font-style li:after {
+        left: clamp(20px, 3.5vw, 25px);
+    }
+
+    .resume.font-style li:last-child {
+        padding: 7px clamp(15px, 3vw, 20px) 5px 0;
+    }
+
+    .resume.font-style li:last-child:before {
+        left: clamp(55px, 8.5vw, 58px);
+    }
+
+    .resume.font-style li:last-child:after {
+        left: clamp(20px, 3vw, 25px);
+    }
+
+    .resume.window-content iframe {
+        width: 65vw;
+        min-width: 365px;
+        max-width: 460px;
+    }
+}
+
+@media only screen and (max-device-width: 500px) {
+    .container.a, .container.b {
+        width: clamp(325px, 70vw, 400px)
+    }
+
+    /* resume title */
+
+    .sticky.title {
+        height: 150px;
+        min-height: unset;
+    }
+
+    /* resume window */
+
+    .resume.file-toolbar li, .resume.font-toolbar li {
+        padding: 1px 3px;
+    }
+
+    .resume.file-toolbar i {
+        font-size: 0.75em;
+    }
+
+    .resume.font-style li {
+        font-size: 0.75rem;
+        padding: 7px 10px 3px 0;
+    }
+
+    .resume.font-style li:before {
+        bottom: -10px;
+        left: 59px;
+    }
+
+    .resume.font-style li:after {
+        left: 15px;
+    }
+
+    .resume.font-style li:last-child {
+        padding: 7px 15px 3px 0;
+    }
+
+    .resume.font-style li:last-child:before {
+        left: 51px;
+    }
+
+    .resume.window-content iframe {
+        width: 80vw;
+        min-width: unset;
+        max-width: 285px;
+    }
+
+    .resume.window-content iframe html body img {
+        width: 50%;
+    }
+}
