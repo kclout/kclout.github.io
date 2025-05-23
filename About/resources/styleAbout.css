@@ -227,7 +227,7 @@ main {
     }
 }
 
-@media only screen and (max-width: 715px), only screen and (max-device-width: 500px) {
+@media only screen and (max-width: 715px), only screen and (max-device-width: 500px), only screen and (max-device-height: 500px) and (orientation: landscape) {
     main {
         margin: 0 3%;
     }
@@ -294,7 +294,7 @@ main {
     }    
 }
 
-@media only screen and (max-width: 475px) {
+@media only screen and (max-width: 475px), only screen and (max-height: 475px) and (orienation: landscape) {
  .toolbar-content:after, .palette-content:before, .palette-content:after {
     display: none;
  }

@@ -42,28 +42,6 @@ main ul {
     margin-top: 2rem;
 }
 
-.download-resume.window-content a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    padding: 0.23rem 1rem;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 3px;
-    background-color: rgb(0, 0, 0);
-}
-
-.download-resume.window-content a:hover {
-    cursor: pointer;
-    color: rgb(91, 121, 84);
-    border-color: rgb(91, 121, 84);
-    background-color: rgb(255, 255, 255);
-}
-
-.download-resume.window-content a:active {
-    font-size: 14px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(91, 121, 84)
-}
-
 /* resume window */
 
 .resume.window {
@@ -81,10 +59,6 @@ main ul {
     margin: 0;
 }
 
-.resume.menu-bar li:last-child {
-    padding-right: 0;
-}
-
 .resume.menu-bar {
     padding: 0.5rem 1rem;
     background-color: rgb(185, 215, 234);
@@ -93,6 +67,10 @@ main ul {
 .resume.menu-bar li {
     color: rgb(6, 61, 96);
     padding-right: 5%;
+}
+
+.resume.menu-bar li:last-child {
+    padding-right: 0;
 }
 
 .resume.toolbar {
@@ -265,13 +243,15 @@ main ul {
     }
 }
 
-@media only screen and (max-width: 715px), only screen and (max-device-width: 500px) {
+@media only screen and (max-width: 715px), only screen and (max-device-width: 500px), only screen and (max-device-height: 500px) and (orientation: landscape) {
     main {
         margin: 0 3%;
     }
 
     .container.a, .container.b {
-        width: clamp(400px, 70vw, 1000px);
+        width: 70vw;
+        min-width: 400px;
+        max-width: 1000px;
     }
     
     .container.a {
@@ -340,9 +320,11 @@ main ul {
     }
 }
 
-@media only screen and (max-device-width: 500px) {
+@media only screen and (max-width: 500px), only screen and (max-device-width: 500px), only screen and (max-device-height: 500px) and (orientation: landscape) {
     .container.a, .container.b {
-        width: clamp(325px, 70vw, 400px)
+        width: 70vw;
+        min-width: 325px;
+        max-width: 400px;
     }
 
     /* resume title */

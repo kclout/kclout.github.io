@@ -1,0 +1,286 @@
+main ul {
+    list-style-type: none;
+}
+
+/* containers */
+
+.container.a {
+    width: 25vw;
+    min-width: 200px;
+    max-width: 300px;
+    padding-left: 5%;
+}
+
+.container.b {
+    padding-right: 10%;
+}
+
+/* contact title */
+
+.sticky.title {
+    font-family: Silkscreen, monospace;
+    font-size: clamp(1.75rem, 2.25vw, 2rem);
+    font-weight: normal;
+    width: 90%;
+    max-width: 200px;
+    height: 30vh;
+    min-height: 160px;
+    max-height: 200px;
+    margin-bottom: 4rem;
+    color: rgb(99, 77, 117);
+    background-color: rgb(223, 202, 239);
+}
+
+/* contact window */
+
+.contact.window {
+    width: 100%;
+    min-width: 417px;
+    max-width: 1000px;
+}
+
+.mini-container.a {
+    background-color: rgb(255, 255, 255);
+    height: 20vw;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.contact.window-content {
+    background-color: rgb(185, 215, 234);
+}
+
+.contact.menu-bar, .contact.directory {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.contact.menu-bar {
+    justify-content: space-between;
+    padding: 0 0 0.5rem;
+    background-color: rgb(185, 215, 234);
+}
+
+.contact.menu-bar li {
+    color: rgb(6, 61, 96);
+    padding-right: 5%;
+}
+
+.contact.menu-bar li:nth-last-child(2) {
+    padding-right: 0;
+}
+
+.contact.menu-bar li:last-child {
+    color: rgb(185, 215, 234);
+    padding: 0.25rem 2% 0.25rem 30%;
+    margin-left: 10%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;
+}
+
+.contact.directory {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+}
+
+.contact.directory li {
+    font-family: Silkscreen, monospace;
+    width: 30%;
+    padding: 1%;
+}
+
+.contact-folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.contact-folder img {
+    width: 6rem;
+}
+
+.contact-folder p {
+    color: rgb(6, 61, 96);
+    margin: 0.5rem 0 0 0;
+}
+
+/* pop-ups */
+
+div.contact.pop-up.window {
+    min-width: unset;
+    max-width: 50%;
+}
+
+div.contact.pop-up.window.small {
+    margin: 10% auto;
+}
+
+div.contact.pop-up.window-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+}
+
+div.contact.pop-up.window-content.small {
+    align-items: center;
+}
+
+div.contact.pop-up.window-content img {
+    width: 7rem;
+    margin-bottom: 0.5rem;
+}
+
+div.contact.pop-up.window-content.small a {
+    padding: 0.5rem;
+}
+
+div.contact.pop-up.window-content .photo {
+    width: 99%;
+    height: 70vh;
+    max-height: 30rem;
+    border: 1px solid rgb(161, 135, 180);
+    border-radius: 0;
+}
+
+div.contact.pop-up.window-content i {
+    position: absolute;
+    right: 3%;
+    z-index: 1;
+    color: rgb(255, 255, 255);
+    padding: 1rem 0.5rem;
+    margin: 0.5rem;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+}
+
+div.contact.pop-up.window-content i:hover {
+    cursor: pointer;
+    color: rgb(91, 121, 84);
+    border-color: rgb(91, 121, 84);
+    background-color: rgb(255, 255, 255);
+}
+
+div.contact.pop-up.window-content i:active {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(91, 121, 84);
+}
+
+@media only screen and (max-width: 980px), only screen and (max-device-width: 1200px) {
+
+    main {
+        margin: 10%;
+    }
+
+    /* containers */
+
+    .container.a, .container.b {
+        width: 100%;
+        height: unset;
+        margin: 0 3% 2rem;
+    }
+
+    .container.a {
+        padding-left: 0;
+    }
+
+    .container.b {
+        padding-right: 0;
+    }
+
+    /* contact title */
+
+    .sticky.title {
+        font-size: clamp(1.5rem, 3.5vw, 2.20rem);
+        width: 60vw;
+        max-width: 500px;
+        min-height: unset;
+        max-height: 165px;
+        margin: 2rem 0; 
+    }
+
+    /* contact window */
+
+    .contact.window {
+        width: 60vw;
+    }
+
+    .mini-container.a {
+        height: 30vw;
+    }
+}
+
+
+@media only screen and (max-width: 715px), only screen and (max-device-width: 500px), only screen and (max-device-height: 500px) and (orientation: landscape) {
+    main {
+        margin: 0 3%;
+    }
+
+    /* containers */
+
+    .container.a, .container.b {
+        width: 70vw;
+        min-width: 400px;
+        max-width: 1000px;
+    }
+
+    .container.a {
+        margin-top: 4rem;
+    }
+
+    /* contact title */
+
+    .sticky.title {
+        font-size: clamp(1.5rem, 5vw, 2.20rem);
+        width: 70vw;
+        max-width: 470px;
+        margin: 0 2rem 2rem;
+    }
+
+    .mini-container.a {
+        height: 40vw;
+    }
+    
+    /* contact window */
+
+    .contact.window {
+        width: 70vw;
+        min-width: 300px;
+    }
+
+    .contact.menu-bar li {
+        font-size: 0.75rem;
+    }
+
+    .contact.menu-bar li:last-child {
+        margin-left: 5%;
+    }
+
+    .contact-folder img {
+        width: 4rem;
+    }
+
+    /* pop-ups */
+
+    div.contact.pop-up.window {
+        max-width: 75%;
+    }
+
+    div.contact.pop-up.window-content .photo{
+        height: 100vw;
+    }
+}
+
+
+@media only screen and (max-device-width: 500px), only screen and (max-device-height: 500px) and (orientation: landscape) {
+    div.contact.pop-up.window-content .photo {
+        height: 150vw;
+    }
+}

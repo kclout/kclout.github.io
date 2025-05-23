@@ -227,7 +227,7 @@
     }    
 }
 
-@media only screen and (max-width: 715px), only screen and (max-device-width: 500px) {
+@media only screen and (max-width: 715px), only screen and (max-device-width: 500px), only screen and (max-device-height: 500px) and (orientation: landscape) {
     .container.a {
         justify-content: space-between;
     }
@@ -257,7 +257,7 @@
     }
 }
 
-@media only screen and (max-device-width: 500px) {
+@media only screen and (max-device-width: 500px), only screen and (max-device-height: 500px) and (orientation: landscape) {
     .media-player.controls:before {
         padding: 0 25%;
         border-width: 5px 125px 0 0;

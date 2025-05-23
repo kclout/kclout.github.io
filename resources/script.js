@@ -7,7 +7,7 @@ const miscElem = {
 // media queries //
 
 const query = {
-   mobile: window.matchMedia('only screen and (max-width: 715px), only screen and (max-device-width: 500px)'),
+   mobile: window.matchMedia('only screen and (max-width: 715px), only screen and (max-device-width: 500px), only screen and (max-device-height: 500px) and (orientation: landscape)'),
    desktop: window.matchMedia('only screen and (min-width: 716px), only screen and (max-device-width: 1200px)'),
    desktopSmall: window.matchMedia('only screen and (max-width: 980px), only screen and (max-device-width: 1200px)'),
 };
@@ -28,6 +28,7 @@ const mainElem = {
    barText: document.querySelectorAll('.bar h2'),
    mainText: document.querySelectorAll('.window-content p'),
    h3Text: document.querySelectorAll('h3'),
+   answerButtons: document.querySelectorAll('.answer-button'),
    pageBackground: document.querySelector('html'),
 }
 
@@ -49,8 +50,8 @@ const settingsElem = {
 }
 
 const popUpElem = {
-   popUpWindow: document.querySelector('.pop-up.window'),
-   popUpContent: document.querySelector('.pop-up.window-content'),
+   popUpWindows: document.querySelectorAll('.pop-up.window'),
+   popUpContent: document.querySelectorAll('.pop-up.window-content'),
    popUpExit: document.querySelector('.pop-up.fa-rectangle-xmark'),
 }
 
@@ -308,6 +309,45 @@ let applyNightMode = () => {
          text.style.transition = '0.4s';
       });
 
+      mainElem.answerButtons.forEach((button) => {
+         button.style.color = 'rgb(0, 0, 0)';
+         button.style.backgroundColor = 'rgb(255, 255, 255)';
+         button.style.borderColor = 'rgb(255, 255, 255)'
+         button.style.transition = '0.4s';
+
+         button.addEventListener('mouseover', () => {
+             button.style.color = 'rgb(176, 197, 172)';
+             button.style.backgroundColor = 'rgb(40, 40, 40)';
+             button.style.borderColor = 'rgb(176, 197, 172)';
+         });
+
+         button.addEventListener('mouseout', () => {
+             if(settingsElem.nightElem.nightToggle.checked) {
+                 button.style.color = 'rgb(0, 0, 0)';
+                 button.style.backgroundColor = 'rgb(255, 255, 255)';
+                 button.style.borderColor = 'rgb(255, 255, 255)';
+             }
+             else {
+                 button.style.color = '';
+                 button.style.backgroundColor = '';
+                 button.style.borderColor = '';
+             }
+         });
+
+         button.addEventListener('mousedown', () => {
+             if(settingsElem.nightElem.nightToggle.checked) {
+                 button.style.color = 'rgb(0, 0, 0)';
+                 button.style.backgroundColor = 'rgb(176, 197, 172)';
+                 button.style.borderColor = 'rgb(176, 197, 172)';
+             }
+             else {
+                 button.style.color = 'rgb(255, 255, 255)';
+                 button.style.backgroundColor = 'rgb(91, 121, 84)';
+                 button.style.borderColor = 'rgb(91, 121, 84';
+             }
+         });
+     });
+
       // footer //
       footerElem.footer.style.backgroundColor = 'rgb(0, 0, 0)';
       footerElem.footer.style.transition = '0.4s';
@@ -326,7 +366,18 @@ let applyNightMode = () => {
       settingsElem.settingsIcons.forEach((icon) => {
          icon.style.color = 'rgb(255, 255, 255)';
          icon.style.transition = '0.4s';
-      }); 
+      });
+
+      popUpElem.popUpWindows.forEach((window) => {
+         window.style.backgroundColor = 'rgb(40, 40, 40)';
+         window.style.borderColor = 'rgb(176, 197, 172)';
+         window.style.transition = '0.4s';         
+      });
+
+      popUpElem.popUpContent.forEach((content) => {
+         content.style.backgroundColor = 'rgb(40, 40, 40)';
+         content.style.transition = '0.4s';         
+      });
    }
    else {
 
@@ -360,6 +411,19 @@ let applyNightMode = () => {
          text.style.color = '';
       });
 
+      mainElem.answerButtons.forEach((button) => {
+         button.style.color = '';
+         button.style.backgroundColor = '';
+         button.style.borderColor = '';
+         
+
+         button.addEventListener('mouseover', () => {
+             button.style.color = '';
+             button.style.backgroundColor = '';
+             button.style.borderColor = '';
+         });
+     });
+
       // footer //
       footerElem.footer.style.backgroundColor = '';
 
@@ -373,6 +437,15 @@ let applyNightMode = () => {
 
       settingsElem.settingsIcons.forEach((icon) => {
          icon.style.color = '';
+      });
+
+      popUpElem.popUpWindows.forEach((window) => {
+         window.style.backgroundColor = '';
+         window.style.borderColor = '';
+      });
+
+      popUpElem.popUpContent.forEach((content) => {
+         content.style.backgroundColor = '';
       });
    }
 }
