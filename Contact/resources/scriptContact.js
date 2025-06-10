@@ -4,10 +4,11 @@ const directElem = {
     directMenuBar: document.querySelector('.contact.menu-bar'),
     directBarText: document.querySelectorAll('.contact.menu-bar li'),
     directContent: document.querySelector('.contact.window-content'),
+    directPopUpImg: document.querySelectorAll('div.contact.pop-up.window-content .photo'),
 };
 
 let popUpContactElems = () => {
-    const allContactFolders= [];
+    const allContactFolders = [];
     
     directElem.directFolders.forEach((folder) => {
         if(!folder.querySelector('img').src.includes('paper')) {
@@ -126,6 +127,12 @@ let applyNightModeContact = () => {
             text.style.color = 'rgb(185, 215, 234)';
             text.style.transition = '0.4s';
         });
+
+        directElem.directPopUpImg.forEach((img) => {
+            img.style.borderColor = 'rgb(223, 202, 239)';
+            img.style.transition = '0.4s';
+
+        });
     }
     else {
         directElem.directBackground.style.backgroundColor = '';
@@ -134,6 +141,10 @@ let applyNightModeContact = () => {
 
         directElem.directBarText.forEach((text) => {
             text.style.color = '';
+        });
+
+        directElem.directPopUpImg.forEach((img) => {
+            img.style.borderColor = '';
         });
     }
 }

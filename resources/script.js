@@ -415,7 +415,6 @@ let applyNightMode = () => {
          button.style.color = '';
          button.style.backgroundColor = '';
          button.style.borderColor = '';
-         
 
          button.addEventListener('mouseover', () => {
              button.style.color = '';
