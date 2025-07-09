@@ -115,6 +115,13 @@
     border-radius: 3px;
 }
 
+.media-player.controls input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;   
+}
+
 .media-player.content h3 {
     margin: 0 auto;
 }

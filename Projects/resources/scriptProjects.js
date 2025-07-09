@@ -5,7 +5,7 @@ const projElem = {
     projButtons: document.querySelectorAll('.mini-container.a .answer-button'),
 }
 
-let getProjInfo = () => {
+let getProjInfo = () => {       // get project number and img and store in array
     const projInfoArr = [];
 
     projElem.projWindowContent.forEach((content) => {
@@ -34,7 +34,7 @@ let projWindowStyles = () => {
     projInfoStyles.forEach((info) => {
         projElem.projWindowContent.forEach((content) => {
             if(queryCheck() !== 1) {
-                if(info.projNum % 2 === 0 && content.className.includes(`${info.projNum}`)) { 
+                if(info.projNum % 2 === 0 && content.className.includes(`${info.projNum}`)) {          // change content alignment for even and odd numbered projects
                     info.projImg.style.marginLeft = '1rem';
                     content.style.flexDirection = 'row-reverse';
                 }
@@ -47,28 +47,26 @@ let projWindowStyles = () => {
                 info.projImg.style.margin = '0';
                 content.style.flexDirection = 'column';
             }
-
-            info.projImg.addEventListener('click', () => {
-                if(content.className.includes(`${info.projNum}`)) {
-                    window.open(document.querySelector(`.proj.p${info.projNum} .answer-button`).href, '_blank');
-                }
-            });
         });
     });
 }
 
-let projGifHover = () => {
+let projGifHover = () => {          // replace still image with corresponding gif on mouseover
     const projInfoGif = getProjInfo();
 
     projInfoGif.forEach((info) => {
         projElem.projWindowContent.forEach((content) => {
             content.querySelector('img').addEventListener('mouseover', () => {
                 content.querySelector('img').style.cursor = 'pointer';
-                content.querySelector('img').src = `../resources/images/${info.fileName}.gif`;
+                if(content.querySelector('img').src.includes(`${info.fileName}`)) {
+                    content.querySelector('img').src = `../resources/images/${info.fileName}.gif`;
+                }
             });
 
             content.querySelector('img').addEventListener('mouseout', () => {
-                content.querySelector('img').src = `../resources/images/${info.fileName}.${info.fileExtension}`;
+                if(content.querySelector('img').src.includes(`${info.fileName}`)) {
+                    content.querySelector('img').src = `../resources/images/${info.fileName}.${info.fileExtension}`;
+                }
             });
         });
     });

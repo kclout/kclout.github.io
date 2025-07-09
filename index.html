@@ -75,11 +75,11 @@
                                 <img src="./resources/images/placeholder.jpg">
                             </div>
                             <div class="media-player content">
-                                <h3><a href="#">Placeholder Title</a></h3>
+                                <h3><a href="#" target="_blank">Placeholder Title</a></h3>
                                 <div class="media-player controls">
                                     <i class="fa-solid fa-backward"></i>
-                                    <i class="fa-solid fa-play"></i>
-                                    <i class="fa-solid fa-pause"></i>
+                                    <label for="play" tabindex="s"><input type="radio" id="play" name="controls" aria-label="play" checked><i class="fa-solid fa-play"></i></input></label>
+                                    <label for="pause"><input type="radio" id="pause" name="controls" aria-label="pause"><i class="fa-solid fa-pause"></i></input></label>
                                     <i class="fa-solid fa-forward"></i>
                                 </div>  
                             </div>
@@ -109,6 +109,7 @@
             </footer>
         </div>
         <script src="./resources/script.js"></script>
-        <script src="./Home/resources/scriptHome.js"></script>
+        <script type="module" src="./Projects/resources/scriptProjects.js"></script>
+        <script type="module" src="./Home/resources/scriptHome.js"></script>
     </body>
 </html>
