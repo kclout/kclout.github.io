@@ -470,6 +470,7 @@ let applyGlitchEffects = () => {
    else {
       settingsElem.glitchElem.glitchPics.forEach((img) => {
          img.src = `${img.src.split(".")[0]}.gif`;
+         console.log(`${img.src}`);
       });
    }
 }
