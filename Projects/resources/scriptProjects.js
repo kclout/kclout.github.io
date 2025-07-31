@@ -10,7 +10,7 @@ let getProjInfo = () => {       // get project number and img and store in array
 
     projElem.projWindowContent.forEach((content) => {
         const projNum = Number(content.className.match(/(\d+)/)[0]);
-        const filePath = content.querySelector('img').src;
+        const filePath = content.querySelector('img').src
         const fileName = filePath.split("/").pop().split('.')[0];     // get name of file without extenstion
         const fileExtension = filePath.split("/").pop().split('.')[1];
         const projImg = document.querySelector(`.proj.p${projNum} img`);

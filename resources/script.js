@@ -47,6 +47,7 @@ const settingsElem = {
    settingsText: document.querySelectorAll('.table-text p'),
    settingsIcons: document.querySelectorAll('.table-text .fa-solid'),
    nightElem: {nightToggle: document.querySelector('.night-mode.toggle input')},
+   glitchElem: {glitchToggle: document.querySelector('.glitch-effects.toggle input'), glitchPics: document.querySelectorAll('.glitch')},
 }
 
 const popUpElem = {
@@ -449,6 +450,30 @@ let applyNightMode = () => {
    }
 }
 
+let applyGlitchEffects = () => {
+   if(!settingsElem.glitchElem.glitchToggle.checked) {
+      settingsElem.glitchElem.glitchPics.forEach((img) => {
+         const glitchFilePath = img.src.split(".")[0];      // get file name without extension
+         const glitchFileName = glitchFilePath.split("/").pop(); 
+
+         if(img.src.includes(`${glitchFileName}`)) {     // replace gif with png or jpg, leave gif if neither exist
+            img.src = `${glitchFilePath}.png`;
+            img.onerror = () => {
+               img.src = `${glitchFilePath}.jpg`;
+               img.onerror = () => {
+                  img.src = `${glitchFilePath}.gif`;
+               }
+            }
+         }
+      });
+   }
+   else {
+      settingsElem.glitchElem.glitchPics.forEach((img) => {
+         img.src = `${img.src.split(".")[0]}.gif`;
+      });
+   }
+}
+
 // pop-up windows //
 
 let popUpModule = () => {
@@ -549,6 +574,7 @@ let queryChange = () => {
 queryChange();          // initial run
 
 settings.settingSaveLoad('nightModeState', settingsElem.nightElem.nightToggle, applyNightMode).loadToggleSetting().saveToggleSetting();
+settings.settingSaveLoad('glitchEffectState', settingsElem.glitchElem.glitchToggle, applyGlitchEffects).loadToggleSetting().saveToggleSetting();
 
 popUps.popUpOpenClose(settingsElem.settingsButton, settingsElem.settingsWindow, settingsElem.settingsContent, settingsElem.settingsExit).openPopUpWindow().closePopUpWindow();
 
