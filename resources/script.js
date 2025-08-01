@@ -453,7 +453,7 @@ let applyNightMode = () => {
 let applyGlitchEffects = () => {
    if(!settingsElem.glitchElem.glitchToggle.checked) {
       settingsElem.glitchElem.glitchPics.forEach((img) => {
-         const glitchFilePath = img.src.split(".")[0];      // get file name without extension
+         const glitchFilePath = img.src.split(/\.gif|\.jpg|\.jpeg|\.png/)[0];      // get file name without extension
          const glitchFileName = glitchFilePath.split("/").pop(); 
 
          if(img.src.includes(`${glitchFileName}`)) {     // replace gif with png or jpg, leave gif if neither exist
@@ -469,7 +469,7 @@ let applyGlitchEffects = () => {
    }
    else {
       settingsElem.glitchElem.glitchPics.forEach((img) => {
-         img.src = `${img.src.split(".")[0]}.gif`;
+         img.src = `${img.src.split(/\.gif|\.jpg|\.jpeg|\.png/)[0]}.gif`;
       });
    }
 }
